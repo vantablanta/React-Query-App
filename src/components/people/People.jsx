@@ -1,11 +1,12 @@
 import React from "react";
-import fetchPeople from "./PeopleHelper";
-import { useQuery } from "react-query";
 import StatusInfo from "../../containers/StatusInfo";
 import DataDisplay from "../../containers/DataDisplay";
+import { usePeople } from "../../hooks/CustomHooks";
+import { PeopleForm } from "./PeopleForm";
 
 const Planets = (props) => {
-  const { data, status, error } = useQuery("people", fetchPeople);
+  const { data, status, error } = usePeople();
+
   console.log(data);
 
   const columns = [
@@ -37,6 +38,7 @@ const Planets = (props) => {
       <h2>People</h2>
       <StatusInfo status={status} error={error} data={data} />
       <DataDisplay data={data} columns={columns} />
+      <PeopleForm />
     </>
   );
 };

@@ -4,6 +4,7 @@ import People from "./components/people/People";
 import Planets from "./components/planets/Planets";
 import Box from '@mui/material/Box';
 
+
 function App() {
   const [page, setPage] = useState("planets")
 

@@ -1,8 +1,7 @@
 import React from "react";
-import fetchPlanets from "./PlanetsHelper";
-import { useQuery } from "react-query";
 import StatusInfo from "../../containers/StatusInfo";
 import DataDisplay from "../../containers/DataDisplay";
+import { usePlanets } from "../../hooks/CustomHooks";
 
 const Planets = (props) => {
   const columns = [
@@ -29,7 +28,7 @@ const Planets = (props) => {
     },
   ];
 
-  const { data, status, error } = useQuery("planets", fetchPlanets);
+  const { data, status, error } = usePlanets();
 
   return (
     <>
